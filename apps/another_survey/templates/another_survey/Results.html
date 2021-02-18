@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Thank you
+{% endblock %}
+
+{% block content %}
+    <p><b> You gave the following answers </p><b><br>
+    <table>
+        <tr>
+            <th>Age</th>
+            <td>{{player.age}} </td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td>{{player.gender}} </td>
+        </tr>
+        <tr>
+            <th>Math grade</th>
+            <td>{{player.math_grade}} </td>
+        </tr>
+        <tr>
+            <th>Time preferences</th>
+            <td>{{player.falk_time}} </td>
+        </tr>
+    </table>
+
+{% endblock %}
+
+

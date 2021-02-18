@@ -1,0 +1,26 @@
+ {% load otree %}
+
+    <p>
+        Your total costs are:
+    </p>
+
+    <ul>
+        {% if player.role == Constants.role_high_costs%}
+        <strong>Costs = {{ Constants.theta_H }} x Units produced by your firm</strong>
+        {% else %}
+        <strong>Costs = {{ Constants.theta_L }} x Units produced by your firm</strong>
+        {% endif %}
+    </ul>
+
+    <p>
+        The costs of the other firm are:
+    </p>
+
+    <ul>
+        {% if player.role == Constants.role_high_costs%}
+        <strong>Costs of other firm= {{ Constants.theta_L }} x Units produced by other firm</strong>
+        {% else %}
+        <strong>Costs of other firm = {{ Constants.theta_H }} x Units produced by other firm</strong>
+        {% endif %}
+    </ul>
+

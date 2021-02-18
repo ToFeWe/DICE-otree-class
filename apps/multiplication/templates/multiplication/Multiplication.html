@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Please multiply the two numbers below ({{round_number}}. of {{Constants.num_rounds}} Tasks)
+{% endblock %}
+
+{% block content %}
+<table style="width:100%">
+
+  <tr>
+    <th>First Number</th>
+    <th>Second Number</th>
+    <th>Answer</th>
+  </tr>
+  <tr>
+    <td>{{ player.first_number }}</td>
+    <td>{{ player.second_number }}</td>
+    <td><br> {% formfield player.user_answer %}</td>
+  </tr>
+</table>
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block content %}
+    Welcome to the experiment. On the next pages you will be asked to complete certain pictures with the fitting pattern. For each pattern that you complete correctly, you will receive 
+    <b>{{Constants.payment_per_matrix}}.</b><br>
+    One point corresponds to {{real_world_currency_per_point}} €.<br>
+    
+    <div id='p_fee'>
+    <p>
+    You receive {{participation_fee}} for showing up today.
+    </p>
+
+    </div>
+    {% next_button %}
+
+
+<style>
+#p_fee {
+    color: #7FFFD4;
+}
+
+</style>
+{% endblock %}
+

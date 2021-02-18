@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Role switch
+{% endblock %}
+
+{% block content %}
+    <h3>You now switch roles with the other participant in your market.</h3>
+
+    {% include Constants.instructions_costs %}
+
+
+    {% next_button %}
+
+{% endblock %}

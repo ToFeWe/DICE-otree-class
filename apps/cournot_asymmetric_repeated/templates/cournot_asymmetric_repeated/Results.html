@@ -1,0 +1,53 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+    <p>The results are shown in the following table.</p>
+
+    <table class="table">
+
+        <tr>
+            <td>Your firm produced:</td>
+            <td>{{ player.units }} units</td>
+        </tr>
+
+
+        {% for o_units in other_player_units %}
+            <tr>
+                <td> Other Firm {{ forloop.counter }} </td>
+                <td> {{o_units}} units </td> 
+            <tr>
+        {% endfor %}
+
+        <tr>
+            <td>Total production:</td>
+            <td>{{ group.total_units }} units</td>
+        </tr>
+
+        <tr>
+            <td style="border-top-width:4px">Unit selling price:</td>
+            <td style="border-top-width:4px">{{ Constants.alpha }} – {{ group.total_units }} = {{ group.unit_price }}</td>
+        </tr>
+
+        <tr>
+            <td>Your profit:</td>
+            {% if player.role == Constants.role_high_costs%}
+            <td> {{group.unit_price|floatformat}} x {{player.units}}  - {{Constants.theta_H}} x {{player.units}} = {{ player.payoff }}</td>
+            {% else %}
+            <td> {{group.unit_price|floatformat}} x {{player.units}}  - {{Constants.theta_L}} x {{player.units}} = {{ player.payoff }}</td>
+            {% endif %}
+
+        </tr>
+
+    </table>
+
+    {% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

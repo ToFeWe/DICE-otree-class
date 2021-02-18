@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    Total correct answers: {{total_correct}} <br>
+    {% if player.treatment_costly %}
+    Total false answers: {{total_false}} <br>
+    {% endif %}
+    Total payoff: {{total_money}}
+    {% next_button %}
+{% endblock %}
+
+

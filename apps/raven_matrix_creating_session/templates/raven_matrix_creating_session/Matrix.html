@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Please complete the picture below
+{% endblock %}
+
+{% block content %}
+    <img width="50%" height="50%" src="{% static imgPath %}" />
+    
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}
